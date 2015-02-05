@@ -1,0 +1,43 @@
+.. _index:
+
+==============
+Plugin generic
+==============
+
+Purpose
+=======
+
+The generic plugin is used to handle xPL messages sent by xPL clients that are not part of Domogik. They can be *arduino* DIY devices, ...
+The generic plugin contains only the description of the xPL messages to catch and so there is nothing to start/stop and nothing to configure.
+
+You just have to install the plugin, check it is present in the clients list and create some devices. 
+
+Please notice that you must see your external xPL clients un the clients list as **xPL clients**. If you don't see them, it means that the xPL hub doesn't see them and so the plugin won't be able to catch the xPL messages.
+
+To be detected by the xPL hub (and Domogik), a xPL client must implement the heartbeat xPL messages. More informations here : http://xplproject.org.uk/wiki/index.php/XPL_Specification_Document#Heartbeat_Messages
+Notice that some DIY projects don't implement the heartbeat messages!
+
+If you want to **create your own arduino xPL client**, you can use this library : https://github.com/olebrun/xPL.Arduino
+
+You can check if a xPL message is received on Domogik side by launching the **dmg_dump** tool.
+
+Dependencies
+============
+
+There is no dependency.
+
+Plugin configuration
+====================
+
+There is nothing to configure.
+
+Create the domogik devices
+==========================
+
+* :doc:`Temperature devices <device_type/temperature>` 
+
+Set up your widgets on the user interface
+=========================================
+
+You can now place the widgets of your devices features on the user interface.
+

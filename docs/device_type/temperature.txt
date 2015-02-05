@@ -1,0 +1,41 @@
+===================
+Temperature devices
+===================
+
+Overview
+========
+
+These devices are able to send the temperature. 
+
+Configuration
+=============
+
+When you create such a device, you will have to set this parameter:
+
+===================== =========================== ======================================================================
+Key                   Type                        Description
+===================== =========================== ======================================================================
+device                string                      The device address.
+===================== =========================== ======================================================================
+
+xPL message
+===========
+
+Here is a sample of a compliant xPL message: ::
+
+    xpl-trig
+    {
+    hop=1
+    source=arduino-temp.myarduino
+    target=*
+    }
+    sensor.basic
+    {
+    current=13
+    type=temp
+    address=tempsensor1
+    }
+
+* *current* : contains the value
+* *address* : contains the device address
+

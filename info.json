@@ -1,0 +1,123 @@
+{ 
+    "products" : [],
+    "configuration": [], 
+    "commands": {},
+    "xpl_commands": {},
+    "sensors": {
+        "temperature": {
+            "name": "Temperature",
+            "incremental" : false,
+            "data_type": "DT_Temp",
+            "conversion": "",
+            "timeout" : 600,
+            "history": {
+                "store": true,
+                "duplicate" : false,
+                "max": 0,
+                "expire": 0,
+                "round_value": 0
+            }
+        },
+        "humidity": {
+            "name": "Humidity",
+            "incremental" : false,
+            "data_type": "DT_Humidity",
+            "conversion": "",
+            "timeout" : 600,
+            "history": {
+                "store": true,
+                "duplicate" : false,
+                "max": 0,
+                "expire": 0,
+                "round_value": 0
+            }
+        }
+    },
+    "xpl_stats": {
+       "temperature": {
+            "name": "Temperature",
+            "schema": "sensor.basic",
+            "parameters": {
+                    "static": [
+            {
+                "key": "type",
+                "value": "temp"
+            }
+            ],
+                    "device": [],
+                    "dynamic": [
+                        {
+                             "key": "current",
+                             "ignore_values": "",
+                             "sensor": "temperature"
+                        }
+                    ]
+               }
+       },
+       "humidity": {
+            "name": "Humidity",
+            "schema": "sensor.basic",
+            "parameters": {
+                    "static": [
+            {
+                "key": "type",
+                "value": "humidity"
+            }
+            ],
+                    "device": [],
+                    "dynamic": [
+                        {
+                             "key": "current",
+                             "ignore_values": "",
+                             "sensor": "humidity"
+                        }
+                    ]
+               }
+       }
+    },
+    "device_types": {
+        "generic.temperature": {
+            "description": "", 
+            "id": "generic.temperature", 
+            "name": "Temperature sensors",
+            "commands": [],
+            "sensors": ["temperature"],
+            "parameters": [
+                {
+                    "key": "device",
+                    "xpl" : true,
+                    "description": "Device address.",
+                    "type": "string"
+                }
+            ]
+        },
+        "generic.humidity": {
+            "description": "", 
+            "id": "generic.hummidity", 
+            "name": "Humidity sensors",
+            "commands": [],
+            "sensors": ["humidity"],
+            "parameters": [
+                {
+                    "key": "device",
+                    "xpl" : true,
+                    "description": "Device address.",
+                    "type": "string"
+                }
+            ]
+        }
+    }, 
+    "identity": {
+        "author": "Fritz", 
+        "author_email": "fritz.smh at gmail.com", 
+        "tags": ["generic", "temperature", "humidity"],
+        "dependencies": [],
+        "description": "This plugin is to be used with xPL devices which are not Domogik plugins. For example arduino DIY devices.", 
+        "domogik_min_version": "0.4.0", 
+        "name": "generic", 
+        "type": "plugin", 
+        "xpl_clients_only": true,
+        "version": "1.0"
+    }, 
+    "json_version": 2
+}
