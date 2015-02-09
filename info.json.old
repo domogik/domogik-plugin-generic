@@ -1,4 +1,3 @@
-{ 
     "products" : [],
     "configuration": [], 
     "commands": {
@@ -45,12 +44,11 @@
            "parameters": {
                "static": [],
                "device": []
-           }
-        },
+           },
         "send_text": {
            "name": "send_text",
            "schema": "osd.basic",
-           "xplstat_name": "osd",
+           "xplstat_name": "osd_text",
            "parameters": {
                "static": [],
                "device": []
@@ -281,7 +279,7 @@
                         }
                     ]
                }
-	}
+       }
     },
     "device_types": {
         "generic.temperature": {
@@ -335,7 +333,14 @@
             "name": "OSD",
             "commands": ["send_text"],
             "sensors": ["osd_command", "osd_text", "osd_row", "osd_column", "osd_delay"],
-            "parameters": []
+            "parameters": [
+                {
+                    "key": "device",
+                    "xpl" : true,
+                    "description": "Device address.",
+                    "type": "string"
+                }
+            ]
         }
     }, 
     "identity": {
