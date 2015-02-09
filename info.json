@@ -1,8 +1,36 @@
 { 
     "products" : [],
     "configuration": [], 
-    "commands": {},
-    "xpl_commands": {},
+    "commands": {
+        "set_rgb_color" : {
+            "name" : "set_rgb_color",
+            "return_confirmation" : true,
+            "parameters" : [
+                {
+                    "key" : "color",
+                    "data_type" : "DT_ColorRGBHexa",
+                    "conversion" : ""
+                },
+                {
+                    "key" : "command",
+                    "data_type" : "DT_String",
+                    "conversion" : ""
+                }
+            ],
+            "xpl_command" : "set_rgb_color"
+        }
+    },
+    "xpl_commands": {
+        "set_rgb_color": {
+           "name": "set_rgb_color",
+           "schema": "arduino.rgb",
+           "xplstat_name": "rgb",
+           "parameters": {
+               "static": [],
+               "device": []
+           }
+        }
+    },
     "sensors": {
         "temperature": {
             "name": "Temperature",
@@ -26,6 +54,34 @@
             "timeout" : 600,
             "history": {
                 "store": true,
+                "duplicate" : false,
+                "max": 0,
+                "expire": 0,
+                "round_value": 0
+            }
+        },
+        "rgb_color": {
+            "name": "RGB color",
+            "incremental" : false,
+            "data_type": "DT_ColorRGBHexa",
+            "conversion": "",
+            "timeout" : 600,
+            "history": {
+                "store": true,
+                "duplicate" : false,
+                "max": 0,
+                "expire": 0,
+                "round_value": 0
+            }
+        },
+        "rgb_command": {
+            "name": "RGB command",
+            "incremental" : true,
+            "data_type": "DT_String",
+            "conversion": "",
+            "timeout" : 600,
+            "history": {
+                "store": false,
                 "duplicate" : false,
                 "max": 0,
                 "expire": 0,
@@ -73,6 +129,27 @@
                         }
                     ]
                }
+       },
+       "rgb": {
+            "name": "RGB",
+            "schema": "arduino.rgb",
+            "parameters": {
+                    "static": [],
+                    "device": [],
+                    "dynamic": [
+                        {
+                             "key": "color",
+                             "ignore_values": "",
+                             "sensor": "rgb_color"
+                        },
+                        {
+                             "key": "command",
+                             "ignore_values": "",
+                             "sensor": "rgb_command"
+                        }
+
+                    ]
+               }
        }
     },
     "device_types": {
@@ -105,12 +182,27 @@
                     "type": "string"
                 }
             ]
+        },
+        "generic.ar_rgb": {
+            "description": "",
+            "id": "generic.ar_rgb",
+            "name": "Arduino RGB",
+            "commands": ["set_rgb_color"],
+            "sensors": ["rgb_color", "rgb_command"],
+            "parameters": [
+                {
+                    "key": "device",
+                    "xpl" : true,
+                    "description": "Device address.",
+                    "type": "string"
+                }
+            ]
         }
     }, 
     "identity": {
-        "author": "Fritz", 
-        "author_email": "fritz.smh at gmail.com", 
-        "tags": ["generic", "temperature", "humidity"],
+        "author": "Fritz & OverLoad", 
+        "author_email": "fritz.smh at gmail.com & y.poilvert at geekinfo.fr ", 
+        "tags": ["generic", "temperature", "humidity", "ar_arb"],
         "dependencies": [],
         "description": "This plugin is to be used with xPL devices which are not Domogik plugins. For example arduino DIY devices.", 
         "domogik_min_version": "0.4.0", 
