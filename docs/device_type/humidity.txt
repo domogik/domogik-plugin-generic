@@ -1,11 +1,11 @@
-===================
-Temperature devices
-===================
+================
+Humidity devices
+================
 
 Overview
 ========
 
-These devices are able to send the temperature. 
+These devices are able to send the humidity. 
 
 Configuration
 =============
@@ -26,14 +26,14 @@ Here is a sample of a compliant xPL message: ::
     xpl-trig
     {
     hop=1
-    source=arduino-temp.myarduino
+    source=arduino-humidity.myarduino
     target=*
     }
     sensor.basic
     {
-    current=13
+    current=75
     type=temp
-    address=tempsensor1
+    address=humidiysensor1
     }
 
 * **current** : contains the value

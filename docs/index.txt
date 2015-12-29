@@ -8,5 +8,6 @@ Table Of Content
 
     /generic
     /device_type/temperature
+    /device_type/humidity
     /dev
     /changelog

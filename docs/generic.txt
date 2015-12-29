@@ -12,10 +12,10 @@ The generic plugin contains only the description of the xPL messages to catch an
 
 You just have to install the plugin, check it is present in the clients list and create some devices. 
 
-Please notice that you must see your external xPL clients un the clients list as **xPL clients**. If you don't see them, it means that the xPL hub doesn't see them and so the plugin won't be able to catch the xPL messages.
+Please notice that you must see your external xPL clients in the clients list as **xPL clients**. If you don't see them, it means that the xPL hub doesn't see them and so the plugin won't be able to catch the xPL messages.
 
 To be detected by the xPL hub (and Domogik), a xPL client must implement the heartbeat xPL messages. More informations here : http://xplproject.org.uk/wiki/index.php/XPL_Specification_Document#Heartbeat_Messages
-Notice that some DIY projects don't implement the heartbeat messages!
+Notice that some DIY projects don't implement the heartbeat messages and so Domogik won't see them!
 
 If you want to **create your own arduino xPL client**, you can use this library : https://github.com/olebrun/xPL.Arduino
 
@@ -35,6 +35,7 @@ Create the domogik devices
 ==========================
 
 * :doc:`Temperature devices <device_type/temperature>` 
+* :doc:`Humidity devices <device_type/humidity>` 
 
 Set up your widgets on the user interface
 =========================================
