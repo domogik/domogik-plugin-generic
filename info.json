@@ -3,17 +3,12 @@
     "configuration": [], 
     "commands": {
         "set_rgb_color" : {
-            "name" : "set_rgb_color",
+            "name" : "Set RGB color",
             "return_confirmation" : true,
             "parameters" : [
                 {
                     "key" : "color",
                     "data_type" : "DT_ColorRGBHexa",
-                    "conversion" : ""
-                },
-                {
-                    "key" : "command",
-                    "data_type" : "DT_String",
                     "conversion" : ""
                 }
             ],
@@ -43,7 +38,12 @@
            "schema": "arduino.rgb",
            "xplstat_name": "rgb",
            "parameters": {
-               "static": [],
+               "static": [
+                   {
+                       "key": "command",
+                       "value": "setcolor"
+                   }
+               ],
                "device": []
            }
         },
@@ -91,23 +91,9 @@
             "incremental" : false,
             "data_type": "DT_ColorRGBHexa",
             "conversion": "",
-            "timeout" : 600,
+            "timeout" : 0,
             "history": {
                 "store": true,
-                "duplicate" : false,
-                "max": 0,
-                "expire": 0,
-                "round_value": 0
-            }
-        },
-        "rgb_command": {
-            "name": "RGB command",
-            "incremental" : true,
-            "data_type": "DT_String",
-            "conversion": "",
-            "timeout" : 600,
-            "history": {
-                "store": false,
                 "duplicate" : false,
                 "max": 0,
                 "expire": 0,
@@ -230,18 +216,18 @@
             "name": "RGB",
             "schema": "arduino.rgb",
             "parameters": {
-                    "static": [],
+                    "static": [
+                        {
+                             "key": "command",
+                             "value": "setcolor"
+                        }
+                    ],
                     "device": [],
                     "dynamic": [
                         {
                              "key": "color",
                              "ignore_values": "",
                              "sensor": "rgb_color"
-                        },
-                        {
-                             "key": "command",
-                             "ignore_values": "",
-                             "sensor": "rgb_command"
                         }
 
                     ]
@@ -319,7 +305,7 @@
             "id": "generic.ar_rgb",
             "name": "Arduino RGB",
             "commands": ["set_rgb_color"],
-            "sensors": ["rgb_color", "rgb_command"],
+            "sensors": ["rgb_color"],
             "parameters": [
                 {
                     "key": "device",
