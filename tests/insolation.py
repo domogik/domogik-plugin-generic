@@ -49,10 +49,9 @@ class Test(XplPlugin):
     def __init__(self):
         """ Init plugin
         """
-        XplPlugin.__init__(self, name='test', test = True, source='arduino-rgb.myarduino')
+        XplPlugin.__init__(self, name='test', test = True, source='arduino-insolation.myarduino')
 
-        self.send_xpl(schema = "arduino.rgb", data = {"command" : "setcolor", "device" : "parentsbedroom", "color" : "00ff00"})
-
+        self.send_xpl(schema = "sensor.basic", data = {"current" : 1050, "device" : "insolationsensor1", "type" : "insolation"})
         self.ready()
 
 

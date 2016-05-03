@@ -1,11 +1,11 @@
-================
-Humidity devices
-================
+===========
+RGB devices
+===========
 
 Overview
 ========
 
-These devices are able to send the humidity. 
+These devices are able to control RGB devices.
 
 Configuration
 =============
@@ -21,21 +21,45 @@ device                string                      The device address.
 xPL message
 ===========
 
+xpl-trig/xpl-stat
+-----------------
+
 Here is a sample of a compliant xPL message: ::
 
     xpl-trig
     {
     hop=1
-    source=arduino-humidity.myarduino
+    source=arduino-rgb.myarduino
     target=*
     }
-    sensor.basic
+    arduino.rgb
     {
-    current=75
-    type=temp
-    device=humiditysensor1
+    command=setcolor
+    color=ff0000  
+    device=rgb
     }
 
-* **current** : contains the value
+* **color** : contains the color value in hexa RGB format without the #. Example for red : 'ff0000', for blue : '0000ff'
+* **device** : contains the device address
+
+xpl-cmnd
+--------
+
+Here is a sample of a compliant xPL message: ::
+
+    xpl-cmnd
+    {
+    hop=1
+    source=arduino-rgb.myarduino
+    target=*
+    }
+    arduino.rgb
+    {
+    command=setcolor
+    color=ff0000  
+    device=rgb
+    }
+
+* **color** : contains the color value to set in hexa RGB format without the #. Example for red : 'ff0000', for blue : '0000ff'
 * **device** : contains the device address
 

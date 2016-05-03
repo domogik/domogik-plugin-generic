@@ -33,9 +33,9 @@ Here is a sample of a compliant xPL message: ::
     {
     current=13
     type=temp
-    address=tempsensor1
+    device=tempsensor1
     }
 
 * **current** : contains the value
-* **address** : contains the device address
+* **device** : contains the device address
 

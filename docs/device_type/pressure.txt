@@ -1,11 +1,11 @@
 ================
-Humidity devices
+Pressure devices
 ================
 
 Overview
 ========
 
-These devices are able to send the humidity. 
+These devices are able to send the pressure in Pascal. 
 
 Configuration
 =============
@@ -26,14 +26,14 @@ Here is a sample of a compliant xPL message: ::
     xpl-trig
     {
     hop=1
-    source=arduino-humidity.myarduino
+    source=arduino-pressure.myarduino
     target=*
     }
     sensor.basic
     {
-    current=75
-    type=temp
-    device=humiditysensor1
+    current=34
+    type=pressure
+    device=pressuresensor1
     }
 
 * **current** : contains the value

@@ -51,7 +51,7 @@ class Test(XplPlugin):
         """
         XplPlugin.__init__(self, name='test', test = True, source='arduino-humidity.myarduino')
 
-        self.send_xpl(schema = "sensor.basic", data = {"current" : 75, "address" : "humiditysensor1", "type" : "humidity"})
+        self.send_xpl(schema = "sensor.basic", data = {"current" : 75, "device" : "humiditysensor1", "type" : "humidity"})
         self.ready()
 
 

@@ -1,11 +1,11 @@
-================
-Humidity devices
-================
+===================================
+Solar exposure (insolation) devices
+===================================
 
 Overview
 ========
 
-These devices are able to send the humidity. 
+These devices are able to send the solar exposure (insolation). 
 
 Configuration
 =============
@@ -26,14 +26,14 @@ Here is a sample of a compliant xPL message: ::
     xpl-trig
     {
     hop=1
-    source=arduino-humidity.myarduino
+    source=arduino-insolation.myarduino
     target=*
     }
     sensor.basic
     {
-    current=75
-    type=temp
-    device=humiditysensor1
+    current=123
+    type=insolation
+    device=insolationsensor1
     }
 
 * **current** : contains the value

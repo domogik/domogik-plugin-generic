@@ -86,6 +86,62 @@
                 "round_value": 0
             }
         },
+        "pressure": {
+            "name": "Pressure",
+            "incremental" : false,
+            "data_type": "DT_Pressure",
+            "conversion": "",
+            "timeout" : 600,
+            "history": {
+                "store": true,
+                "duplicate" : false,
+                "max": 0,
+                "expire": 0,
+                "round_value": 0
+            }
+        },
+        "co2": {
+            "name": "Co2",
+            "incremental" : false,
+            "data_type": "DT_Co2",
+            "conversion": "",
+            "timeout" : 600,
+            "history": {
+                "store": true,
+                "duplicate" : false,
+                "max": 0,
+                "expire": 0,
+                "round_value": 0
+            }
+        },
+        "tvoc": {
+            "name": "Tvoc",
+            "incremental" : false,
+            "data_type": "DT_Tvoc",
+            "conversion": "",
+            "timeout" : 600,
+            "history": {
+                "store": true,
+                "duplicate" : false,
+                "max": 0,
+                "expire": 0,
+                "round_value": 0
+            }
+        },
+        "insolation": {
+            "name": "insolation",
+            "incremental" : false,
+            "data_type": "DT_Insolation",
+            "conversion": "",
+            "timeout" : 600,
+            "history": {
+                "store": true,
+                "duplicate" : false,
+                "max": 0,
+                "expire": 0,
+                "round_value": 0
+            }
+        },
         "rgb_color": {
             "name": "RGB color",
             "incremental" : false,
@@ -176,102 +232,181 @@
             "name": "Temperature",
             "schema": "sensor.basic",
             "parameters": {
-                    "static": [
-            {
-                "key": "type",
-                "value": "temp"
+                "static": [
+                    {
+                        "key": "type",
+                        "value": "temp"
+                    }
+                ],
+                "device": [],
+                "dynamic": [
+                    {
+                        "key": "current",
+                        "ignore_values": "",
+                        "sensor": "temperature"
+                    }
+                ]
             }
-            ],
-                    "device": [],
-                    "dynamic": [
-                        {
-                             "key": "current",
-                             "ignore_values": "",
-                             "sensor": "temperature"
-                        }
-                    ]
-               }
        },
        "humidity": {
             "name": "Humidity",
             "schema": "sensor.basic",
             "parameters": {
-                    "static": [
-            {
-                "key": "type",
-                "value": "humidity"
+                "static": [
+                    {
+                        "key": "type",
+                        "value": "humidity"
+                    }
+                ],
+                "device": [],
+                "dynamic": [
+                    {
+                        "key": "current",
+                        "ignore_values": "",
+                        "sensor": "humidity"
+                    }
+                ]
             }
-            ],
-                    "device": [],
-                    "dynamic": [
-                        {
-                             "key": "current",
-                             "ignore_values": "",
-                             "sensor": "humidity"
-                        }
-                    ]
-               }
+       },
+       "pressure": {
+            "name": "Pressure",
+            "schema": "sensor.basic",
+            "parameters": {
+                "static": [
+                    {
+                        "key": "type",
+                        "value": "pressure"
+                    }
+                ],
+                "device": [],
+                "dynamic": [
+                    {
+                        "key": "current",
+                        "ignore_values": "",
+                        "sensor": "pressure"
+                    }
+                ]
+            }
+       },
+       "co2": {
+            "name": "Co2",
+            "schema": "sensor.basic",
+            "parameters": {
+                "static": [
+                    {
+                        "key": "type",
+                        "value": "co2"
+                    }
+                ],
+                "device": [],
+                "dynamic": [
+                    {
+                        "key": "current",
+                        "ignore_values": "",
+                        "sensor": "co2"
+                    }
+                ]
+            }
+       },
+       "tvoc": {
+            "name": "Tvoc",
+            "schema": "sensor.basic",
+            "parameters": {
+                "static": [
+                    {
+                        "key": "type",
+                        "value": "tvoc"
+                    }
+                ],
+                "device": [],
+                "dynamic": [
+                    {
+                        "key": "current",
+                        "ignore_values": "",
+                        "sensor": "tvoc"
+                    }
+                ]
+            }
+       },
+       "insolation": {
+            "name": "Insolation",
+            "schema": "sensor.basic",
+            "parameters": {
+                "static": [
+                    {
+                        "key": "type",
+                        "value": "insolation"
+                    }
+                ],
+                "device": [],
+                "dynamic": [
+                    {
+                        "key": "current",
+                        "ignore_values": "",
+                        "sensor": "insolation"
+                    }
+                ]
+            }
        },
        "rgb": {
             "name": "RGB",
             "schema": "arduino.rgb",
             "parameters": {
-                    "static": [
-                        {
-                             "key": "command",
-                             "value": "setcolor"
-                        }
-                    ],
-                    "device": [],
-                    "dynamic": [
-                        {
-                             "key": "color",
-                             "ignore_values": "",
-                             "sensor": "rgb_color"
-                        }
-
-                    ]
+                "static": [
+                    {
+                        "key": "command",
+                        "value": "setcolor"
+                    }
+                ],
+                "device": [],
+                "dynamic": [
+                    {
+                        "key": "color",
+                        "ignore_values": "",
+                        "sensor": "rgb_color"
+                    }
+                ]
                }
        },
        "osd": {
             "name": "osd",
             "schema": "osd.basic",
             "parameters": {
-                    "static": [],
-                    "device": [],
-                    "dynamic": [
-                        {
-                             "key": "command",
-                             "ignore_values": "",
-                             "sensor": "osd_command"
-                        },
-                        {
-                             "key": "text",
-                             "ignore_values": "",
-                             "sensor": "osd_text"
-                        },
-                        {
-                             "key": "row",
-                             "ignore_values": "",
-                             "sensor": "osd_row"
-                        },
-                        {
-                             "key": "column",
-                             "ignore_values": "",
-                             "sensor": "osd_column"
-                        },
-                        {
-                             "key": "delay",
-                             "ignore_values": "",
-                             "sensor": "osd_delay"
-                        }
-                    ]
-               }
-	}
+                "static": [],
+                "device": [],
+                "dynamic": [
+                    {
+                         "key": "command",
+                         "ignore_values": "",
+                         "sensor": "osd_command"
+                    },
+                    {
+                         "key": "text",
+                         "ignore_values": "",
+                         "sensor": "osd_text"
+                    },
+                    {
+                         "key": "row",
+                         "ignore_values": "",
+                         "sensor": "osd_row"
+                    },
+                    {
+                         "key": "column",
+                         "ignore_values": "",
+                         "sensor": "osd_column"
+                    },
+                    {
+                         "key": "delay",
+                         "ignore_values": "",
+                         "sensor": "osd_delay"
+                    }
+                ]
+            }
+        }
     },
     "device_types": {
         "generic.temperature": {
-            "description": "", 
+            "description": "Temperature", 
             "id": "generic.temperature", 
             "name": "Temperature sensors",
             "commands": [],
@@ -286,7 +421,7 @@
             ]
         },
         "generic.humidity": {
-            "description": "", 
+            "description": "Humidity", 
             "id": "generic.hummidity", 
             "name": "Humidity sensors",
             "commands": [],
@@ -300,10 +435,70 @@
                 }
             ]
         },
+        "generic.pressure": {
+            "description": "Atmospheric pressure", 
+            "id": "generic.pressure", 
+            "name": "Pressure sensors",
+            "commands": [],
+            "sensors": ["pressure"],
+            "parameters": [
+                {
+                    "key": "device",
+                    "xpl" : true,
+                    "description": "Device address.",
+                    "type": "string"
+                }
+            ]
+        },
+        "generic.co2": {
+            "description": "Carbon dioxide", 
+            "id": "generic.co2", 
+            "name": "Co2 sensors",
+            "commands": [],
+            "sensors": ["co2"],
+            "parameters": [
+                {
+                    "key": "device",
+                    "xpl" : true,
+                    "description": "Device address.",
+                    "type": "string"
+                }
+            ]
+        },
+        "generic.tvoc": {
+            "description": "Total volatile organic compound", 
+            "id": "generic.tvoc", 
+            "name": "Tvoc sensors",
+            "commands": [],
+            "sensors": ["tvoc"],
+            "parameters": [
+                {
+                    "key": "device",
+                    "xpl" : true,
+                    "description": "Device address.",
+                    "type": "string"
+                }
+            ]
+        },
+        "generic.insolation": {
+            "description": "Solar exposure", 
+            "id": "generic.insolation", 
+            "name": "Insolation sensors",
+            "commands": [],
+            "sensors": ["insolation"],
+            "parameters": [
+                {
+                    "key": "device",
+                    "xpl" : true,
+                    "description": "Device address.",
+                    "type": "string"
+                }
+            ]
+        },
         "generic.ar_rgb": {
             "description": "",
             "id": "generic.ar_rgb",
-            "name": "Arduino RGB",
+            "name": "RGB device",
             "commands": ["set_rgb_color"],
             "sensors": ["rgb_color"],
             "parameters": [
@@ -326,15 +521,15 @@
     }, 
     "identity": {
         "author": "Fritz & OverLoad", 
-        "author_email": "fritz.smh at gmail.com & y.poilvert at geekinfo.fr ", 
-        "tags": ["generic", "temperature", "humidity", "ar_arb"],
+        "author_email": "fritz.smh at gmail.com & y.poilvert at geekinfo.fr & epsilonrt at gmail.com", 
+        "tags": ["generic", "temperature", "humidity", "pressure", "co2", "solar exposure", "rgb"],
         "dependencies": [],
         "description": "This plugin is to be used with xPL devices which are not Domogik plugins. For example arduino DIY devices.", 
-        "domogik_min_version": "0.4.0", 
+        "domogik_min_version": "0.5.0", 
         "name": "generic", 
         "type": "plugin", 
         "xpl_clients_only": true,
-        "version": "1.0"
+        "version": "1.1"
     }, 
     "json_version": 2
 }

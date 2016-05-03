@@ -9,5 +9,10 @@ Table Of Content
     /generic
     /device_type/temperature
     /device_type/humidity
+    /device_type/pressure
+    /device_type/co2
+    /device_type/insolation
+    /device_type/tvoc
+    /device_type/rgb
     /dev
     /changelog

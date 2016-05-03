@@ -2,6 +2,17 @@
 Changelog
 =========
 
+1.1
+===
+
+* New sensor and command : RGB devices
+* New sensor : humidity
+* New sensor : pressure
+* New sensor : co2
+* New sensor : solar exposure
+* New sensor : total volatile organic compound
+* Experimental sensor and command : OSD
+
 1.0
 ===
 

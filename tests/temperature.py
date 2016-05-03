@@ -51,7 +51,7 @@ class Test(XplPlugin):
         """
         XplPlugin.__init__(self, name='test', test = True, source='arduino-temp.myarduino')
 
-        self.send_xpl(schema = "sensor.basic", data = {"current" : 13, "address" : "tempsensor1", "type" : "temp"})
+        self.send_xpl(schema = "sensor.basic", data = {"current" : 13, "device" : "tempsensor1", "type" : "temp"})
         self.ready()
 
 
