@@ -1,0 +1,58 @@
+=====
+Tests
+=====
+
+There is no automated tests for this plugin.
+
+Manual tests
+============
+
+Create the devices
+------------------
+
+In Domogik administration, create the following devices : 
+
+======================= ========================== ====================================
+Device type             Device name                Device address             
+======================= ========================== ====================================
+RGB device              rgb                        parentsbedroom
+CO2 sensors             co2                        co2sensor1              
+Humidity sensors        humidity                   humiditysensor1                         
+Insolation sensors      insolation                 insolationsensor1                             
+Pressure sensors        pressure                   pressuresensor1                         
+Temperature sensors     temperature                tempsensor1    
+Tvoc sensors            tvoc                       tvocsensor1                           
+======================= ========================== ====================================
+
+Simulate some xPL clients
+-------------------------
+Once all device are created, launch the following commands : ::
+
+    cd tests
+    python co2.py
+    python humidity.py
+    python insolation.py
+    python pressure.py
+    python rgb.py
+    python temperature.py
+    python tvoc.py
+
+Check the results
+-----------------
+
+In Domogik administration, for each device, display its details and check the sensor value.
+
+The expected values are :
+
+========================== ====================================
+Device name                Value
+========================== ====================================
+rgb                        00ff00
+co2                        213              
+humidity                   75                            
+insolation                 1050                          
+pressure                   75                         
+temperature                13    
+tvoc                       45                           
+========================== ====================================
+    

@@ -49,7 +49,7 @@ class Test(XplPlugin):
     def __init__(self):
         """ Init plugin
         """
-        XplPlugin.__init__(self, name='test', test = True, source='arduino-insolation.myarduino')
+        XplPlugin.__init__(self, name='test', test = True, source='arduino-insol.myarduino')
 
         self.send_xpl(schema = "sensor.basic", data = {"current" : 1050, "device" : "insolationsensor1", "type" : "insolation"})
         self.ready()

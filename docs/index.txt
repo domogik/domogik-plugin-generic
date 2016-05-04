@@ -15,4 +15,5 @@ Table Of Content
     /device_type/tvoc
     /device_type/rgb
     /dev
+    /tests
     /changelog

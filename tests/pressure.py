@@ -51,7 +51,7 @@ class Test(XplPlugin):
         """
         XplPlugin.__init__(self, name='test', test = True, source='arduino-pressure.myarduino')
 
-        self.send_xpl(schema = "sensor.basic", data = {"current" : 5, "device" : "pressuresensor1", "type" : "pressure"})
+        self.send_xpl(schema = "sensor.basic", data = {"current" : 75, "device" : "pressuresensor1", "type" : "pressure"})
         self.ready()
 
 

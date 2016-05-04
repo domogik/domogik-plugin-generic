@@ -36,6 +36,11 @@ Create the domogik devices
 
 * :doc:`Temperature devices <device_type/temperature>` 
 * :doc:`Humidity devices <device_type/humidity>` 
+* :doc:`CO2 devices <device_type/co2>` 
+* :doc:`Solar exposure (insolation) devices <device_type/insolation>` 
+* :doc:`Pressure devices <device_type/pressure>` 
+* :doc:`Total volatile organic compound devices <device_type/tvoc>` 
+* :doc:`RGB devices <device_type/rgb>` 
 
 Set up your widgets on the user interface
 =========================================
