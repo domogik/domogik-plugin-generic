@@ -469,7 +469,7 @@
             "description": "ON/OFF", 
             "id": "generic.temperature", 
             "name": "ON/OFF switch",
-            "commands": ["on_off"],
+            "commands": ["set_on_off"],
             "sensors": ["on_off"],
             "parameters": [
                 {
