@@ -2,6 +2,18 @@
     "products" : [],
     "configuration": [], 
     "commands": {
+		"set_on_off" : {
+            "name" : "Set ON/OFF",
+            "return_confirmation" : true,
+            "parameters" : [
+                {
+                    "key" : "color",
+                    "data_type" : "DT_Switch",
+                    "conversion" : ""
+                }
+            ],
+            "xpl_command" : "set_on_off"
+		},
         "set_rgb_color" : {
             "name" : "Set RGB color",
             "return_confirmation" : true,
@@ -33,6 +45,20 @@
         }
     },
     "xpl_commands": {
+        "set_on_off": {
+           "name": "set_on_off",
+           "schema": "control.basic",
+           "xplstat_name": "on_off",
+           "parameters": {
+               "static": [
+                   {
+                       "key": "command",
+                       "value": "set_on_off"
+                   }
+               ],
+               "device": []
+           }
+        },
         "set_rgb_color": {
            "name": "set_rgb_color",
            "schema": "arduino.rgb",
@@ -58,6 +84,20 @@
         }
     },
     "sensors": {
+        "on_off": {
+            "name": "ON/OFF",
+            "incremental" : false,
+            "data_type": "DT_Switch",
+            "conversion": "",
+            "timeout" : 600,
+            "history": {
+                "store": true,
+                "duplicate" : false,
+                "max": 0,
+                "expire": 0,
+                "round_value": 0
+            }
+        },
         "temperature": {
             "name": "Temperature",
             "incremental" : false,
@@ -228,6 +268,26 @@
         }
     },
     "xpl_stats": {
+       "on_off": {
+            "name": "ON/OFF",
+            "schema": "control.basic",
+            "parameters": {
+                "static": [
+                    {
+                        "key": "type",
+                        "value": "on_off"
+                    }
+                ],
+                "device": [],
+                "dynamic": [
+                    {
+                        "key": "current",
+                        "ignore_values": "",
+                        "sensor": "on_off"
+                    }
+                ]
+            }
+       },
        "temperature": {
             "name": "Temperature",
             "schema": "sensor.basic",
@@ -405,6 +465,21 @@
         }
     },
     "device_types": {
+        "generic.switch": {
+            "description": "ON/OFF", 
+            "id": "generic.temperature", 
+            "name": "ON/OFF switch",
+            "commands": ["on_off"],
+            "sensors": ["on_off"],
+            "parameters": [
+                {
+                    "key": "device",
+                    "xpl" : true,
+                    "description": "Device address.",
+                    "type": "string"
+                }
+            ]
+        },
         "generic.temperature": {
             "description": "Temperature", 
             "id": "generic.temperature", 
