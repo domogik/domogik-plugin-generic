@@ -2,18 +2,18 @@
     "products" : [],
     "configuration": [], 
     "commands": {
-		"set_on_off" : {
-            "name" : "Set ON/OFF",
-            "return_confirmation" : true,
-            "parameters" : [
+	"set_on_off" : {
+	    "name" : "Set ON/OFF",
+	    "return_confirmation" : true,
+	    "parameters" : [
                 {
-                    "key" : "value",
-                    "data_type" : "DT_Switch",
-                    "conversion" : ""
+                    "key" : "current",
+		    "data_type" : "DT_Switch",
+		    "conversion" : ""
                 }
             ],
-            "xpl_command" : "set_on_off"
-		},
+	    "xpl_command" : "set_on_off"
+	},
         "set_rgb_color" : {
             "name" : "Set RGB color",
             "return_confirmation" : true,
@@ -45,20 +45,15 @@
         }
     },
     "xpl_commands": {
-        "set_on_off": {
-           "name": "set_on_off",
-           "schema": "control.basic",
-           "xplstat_name": "on_off",
-           "parameters": {
-               "static": [
-                   {
-                       "key": "command",
-                       "value": "set_on_off"
-                   }
-               ],
-               "device": []
-           }
-        },
+	"set_on_off" : {
+	    "name" : "Set ON/OFF",
+	    "schema": "control.basic",
+            "xplstat_name": "control",
+            "parameters": {
+                "static": [],
+                "device": []
+	    }
+	},
         "set_rgb_color": {
            "name": "set_rgb_color",
            "schema": "arduino.rgb",
@@ -84,8 +79,8 @@
         }
     },
     "sensors": {
-        "on_off": {
-            "name": "ON/OFF",
+	"on_off": {
+	    "name": "ON/OFF",
             "incremental" : false,
             "data_type": "DT_Switch",
             "conversion": "",
@@ -97,7 +92,7 @@
                 "expire": 0,
                 "round_value": 0
             }
-        },
+	},
         "temperature": {
             "name": "Temperature",
             "incremental" : false,
@@ -268,14 +263,14 @@
         }
     },
     "xpl_stats": {
-       "on_off": {
-            "name": "ON/OFF",
+	"control": {
+            "name": "Control",
             "schema": "control.basic",
             "parameters": {
                 "static": [
                     {
                         "key": "type",
-                        "value": "on_off"
+                        "value": "switch"
                     }
                 ],
                 "device": [],
@@ -287,8 +282,8 @@
                     }
                 ]
             }
-       },
-       "temperature": {
+	},
+        "temperature": {
             "name": "Temperature",
             "schema": "sensor.basic",
             "parameters": {
@@ -465,12 +460,12 @@
         }
     },
     "device_types": {
-        "generic.switch": {
-            "description": "ON/OFF", 
-            "id": "generic.temperature", 
-            "name": "ON/OFF switch",
-            "commands": ["set_on_off"],
-            "sensors": ["on_off"],
+	"generic.control": {
+	    "description": "Control",
+	    "id": "generic.control",
+	    "name": "Control",
+	    "commands": ["set_on_off"],
+	    "sensors": ["on_off"],
             "parameters": [
                 {
                     "key": "device",
@@ -479,7 +474,7 @@
                     "type": "string"
                 }
             ]
-        },
+	},
         "generic.temperature": {
             "description": "Temperature", 
             "id": "generic.temperature", 
