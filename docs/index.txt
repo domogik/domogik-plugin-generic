@@ -14,6 +14,7 @@ Table Of Content
     /device_type/insolation
     /device_type/tvoc
     /device_type/rgb
+    /device_type/control
     /dev
     /tests
     /changelog

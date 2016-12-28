@@ -22,6 +22,7 @@ Insolation sensors      insolation                 insolationsensor1
 Pressure sensors        pressure                   pressuresensor1                         
 Temperature sensors     temperature                tempsensor1    
 Tvoc sensors            tvoc                       tvocsensor1                           
+Control device		control			   xpl-arduino.thermostat
 ======================= ========================== ====================================
 
 Simulate some xPL clients
@@ -36,6 +37,7 @@ Once all device are created, launch the following commands : ::
     python rgb.py
     python temperature.py
     python tvoc.py
+    python control.py
 
 Check the results
 -----------------
@@ -54,5 +56,6 @@ insolation                 1050
 pressure                   75                         
 temperature                13    
 tvoc                       45                           
+control			   1(on)
 ========================== ====================================
     

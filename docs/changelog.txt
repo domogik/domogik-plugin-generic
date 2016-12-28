@@ -2,6 +2,11 @@
 Changelog
 =========
 
+1.2
+===
+
+* New control : control.basic
+
 1.1
 ===
 

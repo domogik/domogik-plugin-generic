@@ -41,6 +41,7 @@ Create the domogik devices
 * :doc:`Pressure devices <device_type/pressure>` 
 * :doc:`Total volatile organic compound devices <device_type/tvoc>` 
 * :doc:`RGB devices <device_type/rgb>` 
+* :doc:`Control devices <device_type/control>` 
 
 Set up your widgets on the user interface
 =========================================
