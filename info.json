@@ -1149,7 +1149,7 @@
     "identity": {
         "author": "Fritz & OverLoad & CeDrIcB", 
         "author_email": "fritz.smh at gmail.com & y.poilvert at geekinfo.fr & epsilonrt at gmail.com & cb.dev at sfr.fr", 
-        "tags": ["generic", "temperature", "humidity", "pressure", "co2", "solar exposure", "rgb"],
+        "tags": ["generic", "temperature", "humidity", "pressure", "co2", "solar exposure", "rgb", "edf", "teleinfo", "electricity", "energy"],
         "dependencies": [],
         "description": "This plugin is to be used with xPL devices which are not Domogik plugins. For example arduino DIY devices.", 
         "domogik_min_version": "0.5.0", 

@@ -1,0 +1,41 @@
+===================
+Teleinfo devices
+===================
+
+Overview
+========
+ 
+These devices are able to send the French electric meter informations .
+ 
+Configuration
+=============
+ 
+When you create such a device, you will have to set this parameter:
+ 
+===================== =========================== ======================================================================
+Key                   Type                        Description
+===================== =========================== ======================================================================
+device                string                      The device address.
+===================== =========================== ======================================================================
+ 
+xPL message
+===========
+ 
+Here is a sample of a compliant xPL message: ::
+ 
+    teleinfo.basic
+    {
+    adco=xxxxxx
+    optarif=HC
+    isouc=10
+    iinst=4
+    ptec=0
+    hchc=291049
+    hchp=827140
+    papp=4
+    iinst1=2
+    }
+ 
+* **current** : contains the value
+* **device** : contains the device address
+ 
