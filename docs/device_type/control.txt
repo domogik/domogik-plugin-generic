@@ -1,0 +1,40 @@
+=======================================
+Total volatile organic compound devices
+=======================================
+
+Overview
+========
+
+These devices are able to send the total volatile organic compound. 
+
+Configuration
+=============
+
+When you create such a device, you will have to set this parameter:
+
+===================== =========================== ======================================================================
+Key                   Type                        Description
+===================== =========================== ======================================================================
+device                string                      The device address.
+===================== =========================== ======================================================================
+
+xPL message
+===========
+
+Here is a sample of a compliant xPL message: ::
+
+    xpl-trig
+    {
+    hop=1
+    source=domogik-xplgw.gidomogik
+    target=*
+    }
+    control.basic
+    {
+    device=xpl-arduino.thermostat
+    current=1
+    }
+
+* **current** : contains the value
+* **device** : contains the device address
+

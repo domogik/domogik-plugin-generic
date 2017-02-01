@@ -599,7 +599,7 @@
         "name": "generic", 
         "type": "plugin", 
         "xpl_clients_only": true,
-        "version": "1.1"
+        "version": "1.2"
     }, 
     "json_version": 2
 }
