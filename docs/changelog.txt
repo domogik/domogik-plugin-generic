@@ -2,6 +2,11 @@
 Changelog
 =========
 
+1.3
+===
+
+* New sensors : Teleinformation
+
 1.2
 ===
 

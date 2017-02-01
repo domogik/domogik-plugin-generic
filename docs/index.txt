@@ -15,6 +15,7 @@ Table Of Content
     /device_type/tvoc
     /device_type/rgb
     /device_type/control
+    /device_type/teleinfo
     /dev
     /tests
     /changelog
